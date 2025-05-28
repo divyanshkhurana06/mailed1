@@ -9,7 +9,105 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      email_categories: {
+        Row: {
+          color_class: string
+          icon: string
+          id: string
+          keywords: string[] | null
+          name: string
+        }
+        Insert: {
+          color_class: string
+          icon: string
+          id?: string
+          keywords?: string[] | null
+          name: string
+        }
+        Update: {
+          color_class?: string
+          icon?: string
+          id?: string
+          keywords?: string[] | null
+          name?: string
+        }
+        Relationships: []
+      }
+      emails: {
+        Row: {
+          ai_summary: string
+          category: string
+          gmail_message_id: string
+          id: string
+          is_read: boolean | null
+          original_content: string | null
+          processed_at: string | null
+          received_at: string
+          sender_email: string
+          sender_name: string | null
+          subject: string
+          user_id: string
+        }
+        Insert: {
+          ai_summary: string
+          category: string
+          gmail_message_id: string
+          id?: string
+          is_read?: boolean | null
+          original_content?: string | null
+          processed_at?: string | null
+          received_at: string
+          sender_email: string
+          sender_name?: string | null
+          subject: string
+          user_id: string
+        }
+        Update: {
+          ai_summary?: string
+          category?: string
+          gmail_message_id?: string
+          id?: string
+          is_read?: boolean | null
+          original_content?: string | null
+          processed_at?: string | null
+          received_at?: string
+          sender_email?: string
+          sender_name?: string | null
+          subject?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          email: string
+          gmail_connected: boolean | null
+          gmail_refresh_token: string | null
+          id: string
+          notification_preferences: Json | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          gmail_connected?: boolean | null
+          gmail_refresh_token?: string | null
+          id: string
+          notification_preferences?: Json | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          gmail_connected?: boolean | null
+          gmail_refresh_token?: string | null
+          id?: string
+          notification_preferences?: Json | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
